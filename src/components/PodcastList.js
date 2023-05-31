@@ -18,7 +18,7 @@ function PodcastList() {
           <>
             <Filter filterInput={filterInput} onFilterChange={onFilterChange}/>
             <ul>
-              {  data.feed.entry
+              {  data
                 .filter((podcast) => podcast['im:name'].label.toLowerCase().includes(filterInput.toLowerCase()))
                 .map((podcast) => (
                   <li key={podcast.id.attributes['im:id']}>
