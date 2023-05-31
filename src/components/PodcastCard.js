@@ -12,5 +12,5 @@ function PodcastCard({podcast}) {
 export default PodcastCard;
 
 PodcastCard.propTypes = {
-  podcast: PropTypes.obj
+  podcast: PropTypes.object
 };
