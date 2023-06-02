@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import useFetchData from '../services/useFetchData';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import PodcastCard from './PodcastCard';
 import Filter from './Filter';
 
-function PodcastList() {
-  const { data, loading } = useFetchData();
+function PodcastList({data, loading}) {
   const [filterInput, setFilterInput] = useState('');
 
   const onFilterChange=(e)=>{
@@ -22,7 +23,7 @@ function PodcastList() {
                 .filter((podcast) => podcast['im:name'].label.toLowerCase().includes(filterInput.toLowerCase()))
                 .map((podcast) => (
                   <li key={podcast.id.attributes['im:id']}>
-                    <PodcastCard podcast={podcast}/>
+                    <Link to={`/podcast/${podcast.id.attributes['im:id']}}`}><PodcastCard podcast={podcast}/></Link>
                   </li>
                 ))}
             </ul>
@@ -34,3 +35,8 @@ function PodcastList() {
 }
 
 export default PodcastList;
+
+PodcastList.propTypes = {
+  data: PropTypes.obj,
+  loading: PropTypes.bool
+};

@@ -1,12 +1,29 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import useFetchData from '../services/useFetchData';
 import '../styles/App.css';
 import PodcastList from './PodcastList';
+import PodcastDetail from './PodcastDetail';
 
 function App() {
+  const { data, loading } = useFetchData();
+
   return (
-    <div >
-      <h1>Podcaster</h1>
-      <PodcastList />
-    </div>
+    <Router>
+      <div >
+        <header>
+          <h1>Podcaster</h1>
+        </header>
+        <main>
+
+          <Routes>
+            <Route path='/' element={<PodcastList data={data} loading={loading}/>} />
+          </Routes>
+          <Routes>
+            <Route path='/podcast/:podcastId' element={<PodcastDetail data={data}/>} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
