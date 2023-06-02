@@ -3,7 +3,7 @@ import { Link, useParams} from 'react-router-dom';
 import Sidebar from './Sidebar';
 import PropTypes from 'prop-types';
 import useGetPodcastInfo from '../services/useGetPodcastInfo';
-import EpisodesList from './EpisodesList';
+import EpisodesTable from './EpisodesTable';
 
 function PodcastDetail({data}) {
   const{podcastId}= useParams();
@@ -35,7 +35,7 @@ function PodcastDetail({data}) {
             img={filteredPodcast['im:image'][0].label}
           />
         </div>
-        <EpisodesList  episodes={episodes}/>
+        <EpisodesTable  episodes={episodes}/>
       </>
       }
     </div>
