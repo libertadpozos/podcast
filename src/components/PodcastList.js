@@ -23,7 +23,7 @@ function PodcastList({data, loading}) {
                 .filter((podcast) => podcast['im:name'].label.toLowerCase().includes(filterInput.toLowerCase()))
                 .map((podcast) => (
                   <li key={podcast.id.attributes['im:id']}>
-                    <Link to={`/podcast/${podcast.id.attributes['im:id']}}`}><PodcastCard podcast={podcast}/></Link>
+                    <Link to={`/podcast/${podcast.id.attributes['im:id']}`}><PodcastCard podcast={podcast}/></Link>
                   </li>
                 ))}
             </ul>

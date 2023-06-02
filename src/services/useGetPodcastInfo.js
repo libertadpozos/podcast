@@ -37,9 +37,8 @@ const useGetPodcastInfo = (id) => {
       setData(JSON.parse(storedData));
       setLoading(false);
     } else {
-      fetchData(id.replace('}', ''));
+      fetchData(id);
     }
-    fetchData(id.replace('}', ''));
   }, [id]);
   return { data, loading, errorMessage };
 };

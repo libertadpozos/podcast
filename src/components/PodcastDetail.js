@@ -1,41 +1,41 @@
 import { Link, useParams} from 'react-router-dom';
-
 import Sidebar from './Sidebar';
 import PropTypes from 'prop-types';
 import useGetPodcastInfo from '../services/useGetPodcastInfo';
 import EpisodesTable from './EpisodesTable';
+import { useEffect, useState } from 'react';
 
 function PodcastDetail({data}) {
-  const{podcastId}= useParams();
+  const{podcastId} = useParams();
+  const [podcast, setPodcast] = useState();
 
-  function removeClosingBrace(str) {
-    return str.replace('}', '');
-  }
+  const {data: episodes, loading} = useGetPodcastInfo(podcastId);
 
-  const { data: episodes } = useGetPodcastInfo(podcastId);
-
-
-  const filteredPodcast= data.find((podcast)=>{
-    return podcast.id.attributes['im:id'].includes(removeClosingBrace(podcastId));
-  });
-
+  useEffect(() => {
+    if(!loading){
+      const filteredPodcast= data.find((podcast)=>{
+        return podcast.id.attributes['im:id'].includes(podcastId);
+      });
+      setPodcast(filteredPodcast);
+    }
+  }, [loading]);
 
   return (
     <div>
       <Link className='characterCard-list-link third' to={'/'}> REGRESAR
       </Link>
       <p>Detalles Podcast for </p>
-      {filteredPodcast && episodes &&
+      {podcast && episodes &&
       <>
         <div>
           <Sidebar
-            title={filteredPodcast['im:name'].label}
-            author={filteredPodcast['im:artist'].label}
-            description={filteredPodcast.summary.label}
-            img={filteredPodcast['im:image'][0].label}
+            title={podcast['im:name'].label}
+            author={podcast['im:artist'].label}
+            description={podcast.summary.label}
+            img={podcast['im:image'][0].label}
           />
         </div>
-        <EpisodesTable  episodes={episodes}/>
+        <EpisodesTable episodes={episodes} podcastId={podcastId}/>
       </>
       }
     </div>

@@ -3,6 +3,7 @@ import useFetchData from '../services/useFetchData';
 import '../styles/App.css';
 import PodcastList from './PodcastList';
 import PodcastDetail from './PodcastDetail';
+import EpisodeDetail from './EpisodeDetail';
 
 function App() {
   const { data, loading } = useFetchData();
@@ -20,6 +21,9 @@ function App() {
           </Routes>
           <Routes>
             <Route path='/podcast/:podcastId' element={<PodcastDetail data={data}/>} />
+          </Routes>
+          <Routes>
+            <Route path='/podcast/:podcastId/episode/:episodeId' element={<EpisodeDetail data={data}/>} />
           </Routes>
         </main>
       </div>
