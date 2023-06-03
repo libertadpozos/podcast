@@ -1,0 +1,37 @@
+.episode-table{
+    border-collapse: collapse;
+
+}
+
+.episode-table-block{
+    border: 1px solid #eaeaea;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px
+}
+
+.episode-table__row--header{
+    font-weight: bold;
+}
+
+.episode-table-container{
+    margin-left: 30px;
+}
+
+.episode-table__cell--link:hover{
+    color: blue; 
+}
+
+.episode-table__row:nth-child(odd){
+    background-color: #eaeaea;
+}
+
+.episode-table__cell{
+    padding: 10px;
+}
+
+.episode-table-number{
+    padding: 10px;
+    border: 1px solid #eaeaea;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}

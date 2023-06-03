@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import useGetPodcastInfo from '../services/useGetPodcastInfo';
 import EpisodesTable from './EpisodesTable';
 import { useEffect, useState } from 'react';
+import '../styles/PodcastDetail.css';
 
 function PodcastDetail({data}) {
   const{podcastId} = useParams();
@@ -22,21 +23,19 @@ function PodcastDetail({data}) {
 
   return (
     <div>
-      <Link className='characterCard-list-link third' to={'/'}> REGRESAR
+      <Link className='characterCard-list-link third' to={'/'}> go back
       </Link>
-      <p>Detalles Podcast for </p>
       {podcast && episodes &&
-      <>
-        <div>
+        <div className='podcast-detail-container'>
           <Sidebar
             title={podcast['im:name'].label}
             author={podcast['im:artist'].label}
             description={podcast.summary.label}
-            img={podcast['im:image'][0].label}
+            img={podcast['im:image'][2].label}
           />
+
+          <EpisodesTable episodes={episodes} podcastId={podcastId}/>
         </div>
-        <EpisodesTable episodes={episodes} podcastId={podcastId}/>
-      </>
       }
     </div>
   );

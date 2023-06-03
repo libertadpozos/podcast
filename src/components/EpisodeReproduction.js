@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import '../styles/EpisodeReproduction.css';
 
 function EpisodeReproduction({title, description, reproductionURl}) {
   return (
-    <div>
-      <p>{title}</p>
+    <div className='episode-reproduction-container'>
+      <p className='episode-reproduction-title'>{title}</p>
       <p>{description}</p>
       <audio controls>
         <source src={reproductionURl} type="audio/mpeg" />

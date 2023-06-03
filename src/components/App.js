@@ -15,7 +15,6 @@ function App() {
           <h1>Podcaster</h1>
         </header>
         <main>
-
           <Routes>
             <Route path='/' element={<PodcastList data={data} loading={loading}/>} />
           </Routes>

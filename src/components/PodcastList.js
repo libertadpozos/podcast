@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import PodcastCard from './PodcastCard';
 import Filter from './Filter';
+import  '../styles/PodcastList.css';
 
 function PodcastList({data, loading}) {
   const [filterInput, setFilterInput] = useState('');
-
+  console.log('data', data);
   const onFilterChange=(e)=>{
     setFilterInput(e.target.value);
   };
@@ -18,11 +18,11 @@ function PodcastList({data, loading}) {
         : (
           <>
             <Filter filterInput={filterInput} onFilterChange={onFilterChange}/>
-            <ul>
+            <ul className='podcast-list-container__list'>
               {  data
                 .filter((podcast) => podcast['im:name'].label.toLowerCase().includes(filterInput.toLowerCase()))
                 .map((podcast) => (
-                  <li key={podcast.id.attributes['im:id']}>
+                  <li key={podcast.id.attributes['im:id']} className='podcast-list-container__list-item'>
                     <Link to={`/podcast/${podcast.id.attributes['im:id']}`}><PodcastCard podcast={podcast}/></Link>
                   </li>
                 ))}

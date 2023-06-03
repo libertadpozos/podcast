@@ -4,6 +4,7 @@ import useFetchData from '../services/useFetchData';
 import useGetPodcastInfo from '../services/useGetPodcastInfo';
 import Sidebar from './Sidebar';
 import EpisodeReproduction from './EpisodeReproduction';
+import '../styles/EpisodeDetail.css';
 
 function EpisodeDetail() {
   const{podcastId, episodeId }= useParams();
@@ -28,17 +29,14 @@ function EpisodeDetail() {
   }, [loading]);
 
   return (
-    <>
-      <p>Episode Detail</p>
+    <div className='episode-detail-container'>
       { podcast &&
-        <div>
           <Sidebar
             title={podcast['im:name'].label}
             author={podcast['im:artist'].label}
             description={podcast.summary.label}
-            img={podcast['im:image'][0].label}
+            img={podcast['im:image'][2].label}
           />
-        </div>
       }
       {episode &&
           <EpisodeReproduction
@@ -47,7 +45,7 @@ function EpisodeDetail() {
             reproductionURl={episode.episodeUrl}
           />
       }
-    </>
+    </div>
 
   );
 }

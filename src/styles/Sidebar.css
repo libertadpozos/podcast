@@ -1,0 +1,32 @@
+.sidebar-card {
+    max-width: 30%;
+    max-height: 600px;
+    padding: 20px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: scroll;
+    border: 1px solid #eaeaea; 
+  }
+
+  .sidebar-title{
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .sidebar-image {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar-description {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .sidebar-image {
+    margin-bottom: 10px;
+  }
+  
