@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Music Podcast Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a single page application built to listen to music podcasts. The application allows users to explore various podcasts, view details about specific podcasts, and listen to individual podcast chapters.
 
-## Available Scripts
+## Features
+- Podcasts List: Displays a list of available podcasts.
+- Podcast Details view: Provides detailed information about a specific podcast, including its title, description, and available chapters.
+- Episode Details view: Presents detailed information about a specific chapter within a podcast, including its title, duration, and audio playback.
 
-In the project directory, you can run:
+## Technologies Used
+- React
+- React Router
+- Hooks
+- Jest, React Testing Library
 
-### `npm start`
+## Starting 🚀
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To run this application locally, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository: git clone 
 
-### `npm test`
+2. Install dependencies: npm install.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Start the development server: npm start
 
-### `npm run build`
+4. To add and upload the changes you make: `git add .` / `git commit -m 'message'` / `git push origin 'name-of-the-branch'`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To run this application in a production mode, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository: git clone 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies: npm install.
 
-### `npm run eject`
+3. Create an optimized build of your app: npm run build
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Start the production server: serve -s build
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Built with 🛠️
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+_This project is created with [Create React App](https://github.com/facebook/create-react-app)._
+>- You can learn more in [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+>- To learn React, take a look at the [React's documentation](https://reactjs.org/).
 
-## Learn More
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Author ✒️
 
-### Code Splitting
+* **Libertad Pozos** - [libertadpozos](https://www.linkedin.com/in/libertadpozos)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
