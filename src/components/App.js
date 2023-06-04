@@ -13,16 +13,15 @@ function App() {
     <Router>
       <div >
         <Header />
-
         <main>
           <Routes>
             <Route path='/' element={<PodcastList data={data} loading={loading}/>} />
           </Routes>
           <Routes>
-            <Route path='/podcast/:podcastId' element={<PodcastDetail data={data}/>} />
+            <Route path='/podcast/:podcastId' element={<PodcastDetail data={data} />} />
           </Routes>
           <Routes>
-            <Route path='/podcast/:podcastId/episode/:episodeId' element={<EpisodeDetail data={data}/>} />
+            <Route path='/podcast/:podcastId/episode/:episodeId' element={<EpisodeDetail data={data} />} />
           </Routes>
         </main>
       </div>

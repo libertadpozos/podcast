@@ -3,6 +3,7 @@ import Sidebar from './Sidebar';
 import PropTypes from 'prop-types';
 import useGetPodcastInfo from '../services/useGetPodcastInfo';
 import EpisodesTable from './EpisodesTable';
+import Loading from './Loading';
 import { useEffect, useState } from 'react';
 import '../styles/PodcastDetail.css';
 
@@ -23,6 +24,7 @@ function PodcastDetail({data}) {
 
   return (
     <div>
+      {loading && <Loading />}
       {podcast && episodes &&
         <div className='podcast-detail-container'>
           <Sidebar

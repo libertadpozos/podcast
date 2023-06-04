@@ -4,6 +4,7 @@ import useFetchData from '../services/useFetchData';
 import useGetPodcastInfo from '../services/useGetPodcastInfo';
 import Sidebar from './Sidebar';
 import EpisodeReproduction from './EpisodeReproduction';
+import Loading from './Loading';
 import '../styles/EpisodeDetail.css';
 
 function EpisodeDetail() {
@@ -30,6 +31,7 @@ function EpisodeDetail() {
 
   return (
     <div className='episode-detail-container'>
+      {loading && <Loading />}
       { podcast &&
           <Sidebar
             id={podcast.id.attributes['im:id']}

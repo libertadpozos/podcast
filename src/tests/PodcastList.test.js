@@ -11,7 +11,7 @@ describe('PodcastList', () => {
       </Router>
     );
 
-    expect(screen.getByText('Loading...')).toBeInTheDocument();
+    expect(screen.getByTestId('loading')).toBeInTheDocument();
   });
 });
 

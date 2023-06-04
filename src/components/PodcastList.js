@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PodcastCard from './PodcastCard';
 import Filter from './Filter';
+import Loading from './Loading';
 import  '../styles/PodcastList.css';
 
 function PodcastList({data, loading}) {
@@ -13,7 +14,7 @@ function PodcastList({data, loading}) {
 
   return (
     <>
-      {loading ? <p> Loading... </p>
+      {loading ? <Loading />
         : (
           <>
             <div className='podcast-list--container__filter'>
