@@ -26,6 +26,7 @@ function PodcastDetail({data}) {
       {podcast && episodes &&
         <div className='podcast-detail-container'>
           <Sidebar
+            id={podcast.id.attributes['im:id']}
             title={podcast['im:name'].label}
             author={podcast['im:artist'].label}
             description={podcast.summary.label}

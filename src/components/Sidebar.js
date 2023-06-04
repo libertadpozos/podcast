@@ -1,13 +1,20 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import '../styles/Sidebar.css';
 
-function Sidebar({title, author, description, img}) {
+function Sidebar({id, title, author, description, img}) {
   return (
     <div className="sidebar-card">
-      <img className="sidebar-image" alt={title} src={img} />
-      <p className="sidebar-title">{title}</p>
+      <Link to={`/podcast/${id}`}>
+        <img className="sidebar-image" alt={title} src={img} />
+      </Link>
+      <Link to={`/podcast/${id}`}>
+        <p className="sidebar-title">{title}</p>
+      </Link>
       <div className="sidebar-description">
-        <p>by {author}</p>
+        <Link to={`/podcast/${id}`}>
+          <p>by {author}</p>
+        </Link>
         <p>Description: </p>
         <p>{ description} </p>
       </div>
@@ -18,6 +25,7 @@ function Sidebar({title, author, description, img}) {
 export default Sidebar;
 
 Sidebar.propTypes = {
+  id: PropTypes.string,
   title: PropTypes.string,
   author: PropTypes.string,
   description: PropTypes.string,
