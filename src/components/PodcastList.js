@@ -22,8 +22,10 @@ function PodcastList({data, loading}) {
               {  data
                 .filter((podcast) => podcast['im:name'].label.toLowerCase().includes(filterInput.toLowerCase()))
                 .map((podcast) => (
-                  <li key={podcast.id.attributes['im:id']} className='podcast-list-container__list-item'>
-                    <Link to={`/podcast/${podcast.id.attributes['im:id']}`}><PodcastCard podcast={podcast}/></Link>
+                  <li key={podcast.id.attributes['im:id']} className='podcast-list-container__list-item' data-testid='list-item'>
+                    <Link to={`/podcast/${podcast.id.attributes['im:id']}`}>
+                      <PodcastCard podcast={podcast} />
+                    </Link>
                   </li>
                 ))}
             </ul>
@@ -37,6 +39,6 @@ function PodcastList({data, loading}) {
 export default PodcastList;
 
 PodcastList.propTypes = {
-  data: PropTypes.obj,
+  data: PropTypes.array,
   loading: PropTypes.bool
 };

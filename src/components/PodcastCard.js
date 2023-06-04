@@ -4,7 +4,7 @@ import '../styles/PodcastCard.css';
 function PodcastCard({podcast}) {
   return (
 
-    <div className='card'>
+    <div className='card' data-testid='card'>
       <img className='card-image' alt={podcast['im:name'].label} src={podcast['im:image'][1].label} />
       <div className='card-description'>
         <p>{podcast['im:name'].label}</p>
