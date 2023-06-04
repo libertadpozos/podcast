@@ -4,6 +4,7 @@ import '../styles/App.css';
 import PodcastList from './PodcastList';
 import PodcastDetail from './PodcastDetail';
 import EpisodeDetail from './EpisodeDetail';
+import Header from './Header';
 
 function App() {
   const { data, loading } = useFetchData();
@@ -11,9 +12,8 @@ function App() {
   return (
     <Router>
       <div >
-        <header>
-          <h1>Podcaster</h1>
-        </header>
+        <Header />
+
         <main>
           <Routes>
             <Route path='/' element={<PodcastList data={data} loading={loading}/>} />

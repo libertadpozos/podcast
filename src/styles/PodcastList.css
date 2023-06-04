@@ -12,3 +12,7 @@
     }
 }
 
+.podcast-list--container__filter{
+    display: flex;
+    justify-content: end;
+}

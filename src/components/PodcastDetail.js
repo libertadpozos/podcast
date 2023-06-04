@@ -1,4 +1,4 @@
-import { Link, useParams} from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import Sidebar from './Sidebar';
 import PropTypes from 'prop-types';
 import useGetPodcastInfo from '../services/useGetPodcastInfo';
@@ -23,8 +23,6 @@ function PodcastDetail({data}) {
 
   return (
     <div>
-      <Link className='characterCard-list-link third' to={'/'}> go back
-      </Link>
       {podcast && episodes &&
         <div className='podcast-detail-container'>
           <Sidebar
