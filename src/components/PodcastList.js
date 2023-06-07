@@ -8,7 +8,7 @@ import  '../styles/PodcastList.css';
 
 function PodcastList({data, loading}) {
   const [filterInput, setFilterInput] = useState('');
-  const onFilterChange=(e)=>{
+  const onFilterChange = (e)=>{
     setFilterInput(e.target.value);
   };
 

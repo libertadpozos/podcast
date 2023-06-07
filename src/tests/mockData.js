@@ -1,4 +1,4 @@
-const data =[ {
+const data = [ {
   'im:name': {
     'label': 'The Joe Budden Podcast'
   },

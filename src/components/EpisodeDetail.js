@@ -8,19 +8,19 @@ import Loading from './Loading';
 import '../styles/EpisodeDetail.css';
 
 function EpisodeDetail() {
-  const{podcastId, episodeId }= useParams();
+  const{podcastId, episodeId } = useParams();
   const [podcast, setPodcast] = useState();
   const [episode, setEpisode] = useState();
 
   const { data: episodes, loading } = useGetPodcastInfo(podcastId);
-  const { data: podcasts }= useFetchData();
+  const { data: podcasts } = useFetchData();
 
   useEffect(() => {
     if(!loading){
-      const filteredEpisode= episodes.results.find((episode)=>{
+      const filteredEpisode = episodes.results.find((episode)=>{
         return episode.trackId === parseInt(episodeId);
       });
-      const filteredPodcast= podcasts.find((podcast)=>{
+      const filteredPodcast = podcasts.find((podcast)=>{
         return podcast.id.attributes['im:id'].includes(podcastId);
       });
       setPodcast(filteredPodcast);

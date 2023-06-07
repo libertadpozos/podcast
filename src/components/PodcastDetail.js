@@ -15,7 +15,7 @@ function PodcastDetail({data}) {
 
   useEffect(() => {
     if(!loading){
-      const filteredPodcast= data.find((podcast)=>{
+      const filteredPodcast = data.find((podcast)=>{
         return podcast.id.attributes['im:id'].includes(podcastId);
       });
       setPodcast(filteredPodcast);

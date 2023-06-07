@@ -4,5 +4,6 @@
     "printWidth": 100,
     "singleQuote": true,
     "trailingComma": "all",
-    "jsxSingleQuote": true
+    "jsxSingleQuote": true,
+    "space-before-after-equal": true
 }
